@@ -35,21 +35,21 @@
             btnMultiply = new Button();
             btnDivided = new Button();
             btnClear = new Button();
-            button7 = new Button();
+            btnPlusMinus = new Button();
             btn4 = new Button();
             btn1 = new Button();
             btnProcent = new Button();
-            button11 = new Button();
-            button12 = new Button();
+            btnDecimal = new Button();
+            btnInverse = new Button();
             btn7 = new Button();
             btn0 = new Button();
             btn2 = new Button();
             btn2x = new Button();
             button17 = new Button();
-            button18 = new Button();
+            clearWindow = new Button();
             btn8 = new Button();
             btn5 = new Button();
-            button21 = new Button();
+            btnsquareroot = new Button();
             btn9 = new Button();
             btn6 = new Button();
             btn3 = new Button();
@@ -138,16 +138,17 @@
             btnClear.UseVisualStyleBackColor = false;
             btnClear.Click += btnClear_Click;
             // 
-            // button7
+            // btnPlusMinus
             // 
-            button7.BackColor = SystemColors.ControlDark;
-            button7.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button7.Location = new Point(12, 445);
-            button7.Name = "button7";
-            button7.Size = new Size(109, 60);
-            button7.TabIndex = 11;
-            button7.Text = "+/-";
-            button7.UseVisualStyleBackColor = false;
+            btnPlusMinus.BackColor = SystemColors.ControlDark;
+            btnPlusMinus.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPlusMinus.Location = new Point(12, 445);
+            btnPlusMinus.Name = "btnPlusMinus";
+            btnPlusMinus.Size = new Size(109, 60);
+            btnPlusMinus.TabIndex = 11;
+            btnPlusMinus.Text = "+/-";
+            btnPlusMinus.UseVisualStyleBackColor = false;
+            btnPlusMinus.Click += btnPlusMinus_Click;
             // 
             // btn4
             // 
@@ -185,27 +186,29 @@
             btnProcent.UseVisualStyleBackColor = false;
             btnProcent.Click += btnProcent_Click;
             // 
-            // button11
+            // btnDecimal
             // 
-            button11.BackColor = SystemColors.ControlDark;
-            button11.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button11.Location = new Point(242, 445);
-            button11.Name = "button11";
-            button11.Size = new Size(109, 60);
-            button11.TabIndex = 15;
-            button11.Text = ".";
-            button11.UseVisualStyleBackColor = false;
+            btnDecimal.BackColor = SystemColors.ControlDark;
+            btnDecimal.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDecimal.Location = new Point(242, 445);
+            btnDecimal.Name = "btnDecimal";
+            btnDecimal.Size = new Size(109, 60);
+            btnDecimal.TabIndex = 15;
+            btnDecimal.Text = ".";
+            btnDecimal.UseVisualStyleBackColor = false;
+            btnDecimal.Click += btnDecimal_Click;
             // 
-            // button12
+            // btnInverse
             // 
-            button12.BackColor = SystemColors.ControlDark;
-            button12.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button12.Location = new Point(12, 181);
-            button12.Name = "button12";
-            button12.Size = new Size(109, 60);
-            button12.TabIndex = 16;
-            button12.Text = "1/x";
-            button12.UseVisualStyleBackColor = false;
+            btnInverse.BackColor = SystemColors.ControlDark;
+            btnInverse.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnInverse.Location = new Point(12, 181);
+            btnInverse.Name = "btnInverse";
+            btnInverse.Size = new Size(109, 60);
+            btnInverse.TabIndex = 16;
+            btnInverse.Text = "1/x";
+            btnInverse.UseVisualStyleBackColor = false;
+            btnInverse.Click += btnInverse_Click;
             // 
             // btn7
             // 
@@ -267,16 +270,17 @@
             button17.UseVisualStyleBackColor = false;
             button17.Click += btnEraser_Click;
             // 
-            // button18
+            // clearWindow
             // 
-            button18.BackColor = SystemColors.ControlDark;
-            button18.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button18.Location = new Point(127, 115);
-            button18.Name = "button18";
-            button18.Size = new Size(109, 60);
-            button18.TabIndex = 22;
-            button18.Text = "CE";
-            button18.UseVisualStyleBackColor = false;
+            clearWindow.BackColor = SystemColors.ControlDark;
+            clearWindow.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            clearWindow.Location = new Point(127, 115);
+            clearWindow.Name = "clearWindow";
+            clearWindow.Size = new Size(109, 60);
+            clearWindow.TabIndex = 22;
+            clearWindow.Text = "CE";
+            clearWindow.UseVisualStyleBackColor = false;
+            clearWindow.Click += clearWindow_Click;
             // 
             // btn8
             // 
@@ -302,16 +306,17 @@
             btn5.UseVisualStyleBackColor = false;
             btn5.Click += btn5_Click;
             // 
-            // button21
+            // btnsquareroot
             // 
-            button21.BackColor = SystemColors.ControlDark;
-            button21.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button21.Location = new Point(242, 181);
-            button21.Name = "button21";
-            button21.Size = new Size(109, 60);
-            button21.TabIndex = 25;
-            button21.Text = "2√x";
-            button21.UseVisualStyleBackColor = false;
+            btnsquareroot.BackColor = SystemColors.ControlDark;
+            btnsquareroot.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnsquareroot.Location = new Point(242, 181);
+            btnsquareroot.Name = "btnsquareroot";
+            btnsquareroot.Size = new Size(109, 60);
+            btnsquareroot.TabIndex = 25;
+            btnsquareroot.Text = "2√x";
+            btnsquareroot.UseVisualStyleBackColor = false;
+            btnsquareroot.Click += btnsquareroot_Click;
             // 
             // btn9
             // 
@@ -357,7 +362,6 @@
             ongoingCalcLabel.RightToLeft = RightToLeft.Yes;
             ongoingCalcLabel.Size = new Size(105, 25);
             ongoingCalcLabel.TabIndex = 29;
-            ongoingCalcLabel.Text = "";
             ongoingCalcLabel.TextAlign = ContentAlignment.MiddleRight;
             // 
             // Form1
@@ -369,21 +373,21 @@
             Controls.Add(btn3);
             Controls.Add(btn6);
             Controls.Add(btn9);
-            Controls.Add(button21);
+            Controls.Add(btnsquareroot);
             Controls.Add(btn5);
             Controls.Add(btn8);
-            Controls.Add(button18);
+            Controls.Add(clearWindow);
             Controls.Add(button17);
             Controls.Add(btn2x);
             Controls.Add(btn2);
             Controls.Add(btn0);
             Controls.Add(btn7);
-            Controls.Add(button12);
-            Controls.Add(button11);
+            Controls.Add(btnInverse);
+            Controls.Add(btnDecimal);
             Controls.Add(btnProcent);
             Controls.Add(btn1);
             Controls.Add(btn4);
-            Controls.Add(button7);
+            Controls.Add(btnPlusMinus);
             Controls.Add(btnClear);
             Controls.Add(btnDivided);
             Controls.Add(btnMultiply);
@@ -402,7 +406,7 @@
         #endregion
 
         private TextBox totalWindow;
-        private Button button21;
+        private Button btnsquareroot;
         private Button btn9;
         private Button button17;
         private Button btn6;
@@ -413,17 +417,17 @@
         private Button btnMultiply;
         private Button btnDivided;
         private Button btnClear;
-        private Button button7;
+        private Button btnPlusMinus;
         private Button btn4;
         private Button btn1;
         private Button btnProcent;
-        private Button button11;
-        private Button button12;
+        private Button btnDecimal;
+        private Button btnInverse;
         private Button btn7;
         private Button btn0;
         private Button btn2;
         private Button btn2x;
-        private Button button18;
+        private Button clearWindow;
         private Button btn8;
         private Button btn5;
         private Label ongoingCalcLabel;

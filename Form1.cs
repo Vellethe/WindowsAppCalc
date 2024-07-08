@@ -27,13 +27,11 @@ namespace Calculator
                 e.Handled = true;
             }
 
-            // Allow only one decimal point
             if (e.KeyChar == '.' && (sender as TextBox).Text.Contains("."))
             {
                 e.Handled = true;
             }
 
-            // Handle backspace
             if (e.KeyChar == '\b')
             {
                 if (totalWindow.Text.Length > 0)
@@ -41,6 +39,7 @@ namespace Calculator
                     totalWindow.Text = totalWindow.Text.Substring(0, totalWindow.Text.Length - 1);
                 }
                 e.Handled = true;
+                UpdateDisplay();
             }
 
             // Handle arithmetic operators and Enter key
@@ -55,6 +54,12 @@ namespace Calculator
                 {
                     ProcessKeyPress(e.KeyChar);
                 }
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == '.')
+            {
+                btnDecimal_Click(sender, e);
                 e.Handled = true;
             }
         }
@@ -119,8 +124,6 @@ namespace Calculator
                         displayText += " " + operations[i] + " " + numbers[i + 1].ToString();
                     }
                 }
-
-                //displayText += " = " + (result % 1 == 0 ? result.ToString("0") : result.ToString());
 
                 ongoingCalcLabel.Text = displayText;
             }
@@ -340,5 +343,78 @@ namespace Calculator
             ongoingCalcLabel.Text = displayText;
         }
 
+        private void btnsquareroot_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal num1 = decimal.Parse(totalWindow.Text);
+
+                double sqrtResult = Math.Sqrt((double)num1);
+
+                decimal result = (decimal)sqrtResult;
+
+                totalWindow.Text = result % 1 == 0 ? result.ToString("0") : result.ToString();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please enter a valid number.");
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Cannot calculate the square root of a negative number.");
+            }
+        }
+
+        private void clearWindow_Click(object sender, EventArgs e)
+        {
+            totalWindow.Clear();
+        }
+
+        private void btnInverse_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal num = decimal.Parse(totalWindow.Text);
+
+                if (num == 0)
+                {
+                    MessageBox.Show("Cannot calculate the reciprocal of zero.");
+                    return;
+                }
+
+                decimal result = 1 / num;
+
+                totalWindow.Text = result % 1 == 0 ? result.ToString("0") : result.ToString();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please enter a valid number.");
+            }
+        }
+
+        private void btnPlusMinus_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal num = decimal.Parse(totalWindow.Text);
+
+                // Multiply by -1 to swap positive/negative
+                num = num * -1;
+
+                totalWindow.Text = num.ToString();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please enter a valid number.");
+            }
+        }
+
+        private void btnDecimal_Click(object sender, EventArgs e)
+        {
+            if (!totalWindow.Text.Contains("."))
+            {
+                totalWindow.Text += ".";
+            }
+        }
     }
 }
